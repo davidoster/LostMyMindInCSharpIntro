@@ -1,4 +1,5 @@
-﻿using Solution_16_11_2022.Models;
+﻿using Solution_16_11_2022.Helpers;
+using Solution_16_11_2022.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,8 @@ namespace Solution_16_11_2022
             //Console.WriteLine(array[1]);
             //Console.WriteLine(array.Length);
 
-            Product[] products = CreateProducts(2);
+
+            Product[] products = ProductManager.CreateProducts(2);
 
             // print array of products
             for (int i = 0; i < products.Length; i++)
@@ -50,21 +52,5 @@ namespace Solution_16_11_2022
             Console.ReadKey();
 
         }
-
-        private static Product[] CreateProducts(int noProducts)
-        {
-            int noOfProducts = noProducts;
-            Product[] products = new Product[noOfProducts];
-            for (int i = 0; i < noOfProducts; i++)
-            {
-                products[i] = new Product(ConsolePrompt.GetPropertyAsInt("Id"),
-                ConsolePrompt.GetPropertyAsString("Title"), ConsolePrompt.GetPropertyAsString("Description"),
-                ConsolePrompt.GetPropertyAsDouble("Price"), ConsolePrompt.GetPropertyAsString("Serial Number"));
-            }
-
-            return products;
-        }
-
-
     }
 }
