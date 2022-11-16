@@ -41,15 +41,22 @@ namespace Solution_16_11_2022
             //Console.WriteLine(array.Length);
 
 
-            Product[] products = ProductManager.CreateProducts(2);
+            //Product[] products = ProductManager.CreateProductsFromUI(2);
 
-            // print array of products
-            for (int i = 0; i < products.Length; i++)
+            //// print array of products
+            //for (int i = 0; i < products.Length; i++)
+            //{
+            //    Console.WriteLine(products[i]);
+            //}
+            Product[] arrayOfProducts = ProductManager.CreateProductsWithRandomData(1);
+            foreach (Product product in arrayOfProducts)
             {
-                Console.WriteLine(products[i]);
+                Console.WriteLine(product);
             }
-            Console.WriteLine("Press any key to continue....");
-            Console.ReadKey();
+
+
+            //Console.WriteLine("Press any key to continue....");
+            //Console.ReadKey();
 
         }
     }
